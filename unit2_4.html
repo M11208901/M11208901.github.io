@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西藏深度之旅｜景點文化導覽報告</title>
+<style>
+  :root{
+    --navy:#1f3864;
+    --gold:#b8860b;
+    --grey:#595959;
+    --bg:#faf8f4;
+    --card:#ffffff;
+    --line:#e6e1d6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Noto Serif TC","PMingLiU","Microsoft JhengHei",serif;
+    background:var(--bg);
+    color:#2b2b2b;
+    line-height:1.9;
+  }
+  .hero{
+    background:linear-gradient(135deg,#1f3864 0%,#3a5a8c 60%,#8a6d1f 140%);
+    color:#fff;
+    padding:80px 24px 64px;
+    text-align:center;
+  }
+  .hero h1{
+    font-size:2.6em;
+    letter-spacing:.08em;
+    margin-bottom:12px;
+    font-weight:700;
+  }
+  .hero h2{
+    font-size:1.3em;
+    color:#f0d795;
+    font-weight:500;
+    letter-spacing:.15em;
+    margin-bottom:22px;
+  }
+  .hero p{
+    font-size:.95em;
+    opacity:.85;
+    max-width:560px;
+    margin:0 auto;
+  }
+  .container{
+    max-width:860px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+  nav.toc{
+    background:var(--card);
+    margin:-32px auto 40px;
+    max-width:820px;
+    border-radius:14px;
+    box-shadow:0 8px 30px rgba(31,56,100,.12);
+    padding:22px 28px;
+    position:relative;
+    z-index:2;
+  }
+  nav.toc h3{
+    color:var(--navy);
+    font-size:1.05em;
+    margin-bottom:12px;
+    letter-spacing:.05em;
+  }
+  nav.toc ul{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px 16px;
+  }
+  nav.toc a{
+    color:var(--grey);
+    text-decoration:none;
+    font-size:.92em;
+    display:block;
+    padding:4px 0;
+    border-bottom:1px dashed transparent;
+    transition:.2s;
+  }
+  nav.toc a:hover{
+    color:var(--gold);
+    border-bottom-color:var(--gold);
+  }
+  section{
+    background:var(--card);
+    margin-bottom:28px;
+    padding:36px 40px;
+    border-radius:14px;
+    box-shadow:0 4px 18px rgba(31,56,100,.06);
+    scroll-margin-top:20px;
+  }
+  section h2{
+    color:var(--navy);
+    font-size:1.5em;
+    border-bottom:2px solid var(--gold);
+    padding-bottom:12px;
+    margin-bottom:18px;
+    letter-spacing:.03em;
+  }
+  section h3{
+    color:var(--gold);
+    font-size:1.1em;
+    margin:22px 0 10px;
+  }
+  section p{
+    font-size:1.02em;
+    color:#333;
+    margin-bottom:14px;
+    text-align:justify;
+  }
+  .tag{
+    display:inline-block;
+    background:#eef1f7;
+    color:var(--navy);
+    font-size:.78em;
+    padding:3px 12px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:.05em;
+  }
+  table.overview{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:8px;
+  }
+  table.overview thead th{
+    background:var(--navy);
+    color:#fff;
+    padding:12px 16px;
+    text-align:left;
+    font-weight:600;
+    font-size:.95em;
+  }
+  table.overview thead th:first-child{border-radius:8px 0 0 0;}
+  table.overview thead th:last-child{border-radius:0 8px 0 0;}
+  table.overview td{
+    padding:14px 16px;
+    border-bottom:1px solid var(--line);
+    font-size:.95em;
+    vertical-align:top;
+  }
+  table.overview tr:nth-child(even) td{background:#f7f5f0;}
+  table.overview td:first-child{font-weight:700;color:var(--navy);white-space:nowrap;}
+  ul.etiquette{
+    list-style:none;
+    margin-top:8px;
+  }
+  ul.etiquette li{
+    position:relative;
+    padding-left:26px;
+    margin-bottom:10px;
+    font-size:.98em;
+  }
+  ul.etiquette li:before{
+    content:"◆";
+    color:var(--gold);
+    position:absolute;
+    left:0;
+    font-size:.8em;
+    top:4px;
+  }
+  .highlight-box{
+    background:#fbf6ea;
+    border-left:4px solid var(--gold);
+    padding:16px 20px;
+    border-radius:6px;
+    margin:16px 0;
+    font-size:.96em;
+    color:#4a4131;
+  }
+  .closing{
+    text-align:center;
+    padding:50px 20px 70px;
+    color:var(--grey);
+  }
+  .closing p{
+    max-width:560px;
+    margin:0 auto 8px;
+    font-size:1.05em;
+  }
+  footer{
+    text-align:center;
+    padding:24px;
+    font-size:.8em;
+    color:#999;
+    border-top:1px solid var(--line);
+  }
+  .back-top{
+    position:fixed;
+    bottom:28px;
+    right:28px;
+    background:var(--navy);
+    color:#fff;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:1.2em;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+    opacity:.85;
+    transition:.2s;
+  }
+  .back-top:hover{opacity:1;transform:translateY(-2px);}
+
+  @media (max-width:640px){
+    .hero{padding:56px 18px 48px;}
+    .hero h1{font-size:1.9em;}
+    .hero h2{font-size:1.05em;}
+    nav.toc{margin-top:-24px;padding:18px 20px;}
+    nav.toc ul{grid-template-columns:1fr 1fr;}
+    section{padding:24px 22px;}
+    section h2{font-size:1.25em;}
+    table.overview{font-size:.85em;}
+    table.overview td, table.overview th{padding:10px 8px;}
+  }
+  @media print{
+    .back-top{display:none;}
+    body{background:#fff;}
+    section{box-shadow:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>西藏深度之旅</h1>
+  <h2>景 點 文 化 導 覽 報 告</h2>
+  <p>獻給即將啟程的貴賓——認識雪域高原上的神話、宮殿與寺院<br>本報告整理自實地導覽解說內容，提供行前參考</p>
+</div>
+
+<div class="container">
+
+  <nav class="toc">
+    <h3>本篇目錄</h3>
+    <ul>
+      <li><a href="#intro">一、前言</a></li>
+      <li><a href="#overview">二、行程亮點總覽</a></li>
+      <li><a href="#yumbulagang">三、雍布拉康</a></li>
+      <li><a href="#norbulingka">四、羅布林卡</a></li>
+      <li><a href="#jokhang">五、大昭寺</a></li>
+      <li><a href="#samye">六、桑耶寺</a></li>
+      <li><a href="#altitude">七、高原反應提醒</a></li>
+      <li><a href="#closing">八、結語</a></li>
+    </ul>
+  </nav>
+
+  <section id="intro">
+    <span class="tag">前言</span>
+    <h2>一、前言</h2>
+    <p>西藏，是許多人一生中最想踏上一次的土地。這裡有兩千多年的宮殿遺跡，有壁畫訴說的創世神話，有獨步於世界醫學史的藏醫藥智慧，也有融合藏、印、漢三種文化的千年古剎。這份報告整理自實地導覽的解說內容，希望讓還在猶豫、或已經準備出發的貴賓，能提前認識行程中最具代表性的幾個景點與背後的故事，讓這趟旅程走得更有感。</p>
+  </section>
+
+  <section id="overview">
+    <span class="tag">總覽</span>
+    <h2>二、行程亮點總覽</h2>
+    <table class="overview">
+      <thead>
+        <tr><th>景點</th><th>一句話特色</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>雍布拉康</td><td>西藏第一位藏人現身之地，西藏史上第一座宮殿，兩千多年歷史的起點</td></tr>
+        <tr><td>羅布林卡</td><td>壁畫完整呈現藏族起源神話，是理解西藏信仰世界觀的最佳入門</td></tr>
+        <tr><td>大昭寺</td><td>藏醫藏藥智慧的發源地之一，親見流傳千年的醫學唐卡與診療文化</td></tr>
+        <tr><td>桑耶寺</td><td>西藏第一座「佛法僧」俱全的寺院，藏、印、漢三種建築風格合一</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="yumbulagang">
+    <span class="tag">景點介紹</span>
+    <h2>三、雍布拉康——藏族文明的起點</h2>
+    <p>雍布拉康被公認為西藏歷史上第一座宮殿，修建於公元前二世紀，距今已有兩千多年歷史。相傳西藏第一位藏人「尼赤讚普」正是在此地出現，而藏族的起源，在民間傳說中則與觀世音菩薩、以及廣為流傳的「獼猴變人」故事緊密相連。今天的雍布拉康，是依照原有的樣貌重建而成，站在殿前，彷彿能感受到藏族文明源頭的份量。</p>
+  </section>
+
+  <section id="norbulingka">
+    <span class="tag">景點介紹</span>
+    <h2>四、羅布林卡——壁畫裡的藏族起源傳說</h2>
+    <p>羅布林卡的壁畫，完整描繪了藏族起源神話的來龍去脈——從觀世音菩薩的化身，到獼猴與岩魔女結合、繁衍出藏族先民的傳說故事。對第一次接觸藏族文化的旅客來說，這裡的壁畫是最直觀、也最容易產生共鳴的一站，能幫助大家在後續參觀其他寺院、宮殿時，更快理解圖像背後的意涵。</p>
+  </section>
+
+  <section id="jokhang">
+    <span class="tag">景點介紹</span>
+    <h2>五、大昭寺——藏醫藏藥的智慧殿堂</h2>
+    <p>藏醫藥的發展，最初與信仰緊密相連。相傳早期沒有醫藥時，病重者甚至會被獨自留在荒僻之處自生自滅；後來人們開始供奉藥師佛，祈求身心的安定與對抗病痛的信心，藏醫藏藥也才逐漸從寺院之中發展、傳承下來。如今在寺院範圍內，仍能見到歷史悠久的藏醫院門診，見證這門醫學智慧如何一路走到今天。</p>
+
+    <h3>診斷方式，充滿高原智慧</h3>
+    <p>藏醫最初的「察脈觀色」與中醫的望聞問切原理相近，但因應過去游牧生活「逐水草而居、就醫不易」的現實，還發展出令人驚訝的診斷方式：病人的家屬會帶著病人握過、以酥油封起並繫上哈達的石頭，前往藏醫處，藏醫透過石頭的裂痕、凹陷與紋路色澤來判斷病情；後來則發展出觀察尿液的顏色、氣味來輔助診斷。到了現代，最廣為流傳、也最容易理解的方式，則是觀察雙手掌與雙腳掌——因為這兩處往往是全身臟腑變化最早反映出來的部位，體現了藏醫「預防重於治療」的核心精神。</p>
+
+    <h3>醫學唐卡「三棵樹」</h3>
+    <p>藏醫藥的知識體系，濃縮在著名的醫學唐卡「三棵樹」之中：第一棵樹描繪人體的生理功能與病理變化，第二棵樹講述診斷方法，第三棵樹則對應治療與用藥。三幅圖像環環相扣，據說完全理解這三棵樹的內涵，便已具備成為一名藏醫的基礎，是西藏醫學史上極具代表性、也非常值得旅客親眼一看的文化資產。</p>
+    <div class="highlight-box">小知識：藏醫的「預防重於治療」精神，讓西藏民眾罕見病痛的發生率遠低於其他地區，是很值得旅客親身了解的一段智慧。</div>
+  </section>
+
+  <section id="samye">
+    <span class="tag">景點介紹</span>
+    <h2>六、桑耶寺——佛法僧俱全的第一座寺院</h2>
+    <p>桑耶寺的興建，源自藏王邀請蓮花生大師入藏弘法。相傳寺院尚未竣工時，蓮花生大師曾以神通從掌中幻化出寺院建成後的樣貌讓藏王先睹為快，藏王一聲讚嘆，寺名也因此而來。桑耶寺之所以被稱為西藏「第一座寺院」，是因為它是第一座佛（佛像）、法（法器經典）、僧（出家僧人）三者俱全的寺院——在此之前，藏地寺院多半只有佛像與法器，直到桑耶寺建成後，才有西藏史上最早出家的七位僧人，稱為「七覺士」，也開啟了寧瑪派（紅教）的傳承。</p>
+    <p>桑耶寺同時也被稱為「三樣寺」，因為寺院建築融合了藏式、印度式與漢式三種不同風格，是西藏建築史上獨樹一格的存在，也是攝影與文化愛好者不容錯過的一站。</p>
+
+    <h3>入寺參觀小提醒</h3>
+    <ul class="etiquette">
+      <li>請勿以單手手指直接指向佛像</li>
+      <li>請勿隨意觸摸佛像或壁畫</li>
+      <li>帽子、墨鏡若為保護眼睛所需，可以配戴入內，無須擔心</li>
+    </ul>
+  </section>
+
+  <section id="altitude">
+    <span class="tag">貼心提醒</span>
+    <h2>七、貼心提醒：認識高原反應</h2>
+    <p>西藏平均海拔超過三千公尺，身體在高原環境下會產生一些正常的生理變化，例如心跳變慢、心臟略微增大、器官輕微膨脹，進而讓平時不明顯的小痠痛被放大感受到——這其實是身體發出的提前預警，提醒大家多留意保養與休息，並不需要過度緊張。導遊在行程中也常分享：心態放輕鬆，是適應高原環境最重要的一環，開心地走完全程，往往比任何準備都更管用。</p>
+  </section>
+
+  <section id="closing" class="closing" style="background:transparent;box-shadow:none;">
+    <h2 style="border:none;color:var(--navy);">八、結語</h2>
+    <p>從兩千年前的第一座宮殿，到壁畫裡的創世傳說；從充滿智慧的藏醫藏藥，到融合三種文化的千年古剎——西藏的迷人之處，從來不只是風景，而是層層疊疊的歷史與信仰。誠摯邀請每一位貴賓，親自走上這片高原，聽一聽屬於西藏的故事。</p>
+  </section>
+
+</div>
+
+<footer>本報告整理自實地導覽解說內容，僅供行前參考</footer>
+
+<a href="#" class="back-top" title="回到頂部">↑</a>
+
+</body>
+</html>
